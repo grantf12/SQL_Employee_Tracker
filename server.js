@@ -85,7 +85,6 @@ function runPrompt() {
 
         case "exit":
           connection.end();
-          break;
       }
     });
 }
@@ -158,18 +157,18 @@ function addRole() {
         {
           name: "newRole",
           type: "input",
-          message: "What is the new role?",
+          message: "What is the new role?"
         },
         {
           name: "newSal",
           type: "input",
-          message: "What is the salary?",
+          message: "What is the salary?"
         },
         {
           name: "newDep",
           type: "rawlist",
           message: "What is the department_id the new role is in?",
-          choices: departStuff,
+          choices: departStuff
         },
       ])
       .then(function (response) {
@@ -327,6 +326,7 @@ function removeEmp() {
         type:"rawlist",
         message: "Who would you like to remove?",
         choices: names
+
     }).then(function(response){
         connection.query("DELETE FROM employee WHERE ?", {id: response.who}, function(err) {
             if (err) throw err;
